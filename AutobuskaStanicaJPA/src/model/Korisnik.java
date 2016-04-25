@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -14,6 +15,7 @@ public class Korisnik implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idKorisnik;
 
 	private String adresaKorisnika;
@@ -27,6 +29,10 @@ public class Korisnik implements Serializable {
 	private String prezimeKorisnika;
 
 	private String userKorisnika;
+
+	//bi-directional many-to-one association to Rezervacija
+	@OneToMany(mappedBy="korisnik")
+	private List<Rezervacija> rezervacijas;
 
 	public Korisnik() {
 	}
@@ -85,6 +91,28 @@ public class Korisnik implements Serializable {
 
 	public void setUserKorisnika(String userKorisnika) {
 		this.userKorisnika = userKorisnika;
+	}
+
+	public List<Rezervacija> getRezervacijas() {
+		return this.rezervacijas;
+	}
+
+	public void setRezervacijas(List<Rezervacija> rezervacijas) {
+		this.rezervacijas = rezervacijas;
+	}
+
+	public Rezervacija addRezervacija(Rezervacija rezervacija) {
+		getRezervacijas().add(rezervacija);
+		rezervacija.setKorisnik(this);
+
+		return rezervacija;
+	}
+
+	public Rezervacija removeRezervacija(Rezervacija rezervacija) {
+		getRezervacijas().remove(rezervacija);
+		rezervacija.setKorisnik(null);
+
+		return rezervacija;
 	}
 
 }
