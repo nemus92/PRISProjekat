@@ -37,10 +37,8 @@ public class KorisnikManager {
 	}
 
 }
-	public static Korisnik registerKorisnik(String imeKorisnika, String prezimeKorisnika, String adresaKorisnika, String jmbgKorisnika, String userKorisnika,
+	public Integer registerKorisnik(EntityManager em, String imeKorisnika, String prezimeKorisnika, String adresaKorisnika, String jmbgKorisnika, String userKorisnika,
 			String passKorisnika) {
-
-		EntityManager em = JPAUtil.getEntityManager();
 		try{
 			em.getTransaction().begin();
 			Korisnik k = new Korisnik();
@@ -52,13 +50,18 @@ public class KorisnikManager {
 			k.setPassKorisnika(passKorisnika);
 			em.persist(k);			
 			em.getTransaction().commit();
-			return k;			
+			return k.getIdKorisnik();			
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
 		}
 	}
-
+	
+	public static void main(String[] args) {
+		EntityManager em = JPAUtil.getEntityManager();
+		Integer k = new KorisnikManager().registerKorisnik(em, "Nemanja", "Dragin", "adresa", "1111", "nemus", "nemus");
+	}
+	
 
 }
 
