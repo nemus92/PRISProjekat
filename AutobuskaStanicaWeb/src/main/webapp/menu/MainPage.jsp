@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title></title>
+<title>Glavni meni</title>
 </head>
 <body>
 
@@ -22,11 +22,11 @@
 <br>
 <p> <span>Meni</span> </p>
 
-<div><a href="/AutobuskaStanicaWeb/menu/Rezervacija.jsp">Rezervisi kartu</a></div>
-<div><a href="/AutobuskaStanicaWeb/menu/Polasci.jsp">Pregled polazaka</a></div>
+<div><a href="/AutobuskaStanicaWeb/menu/Login.jsp">Ulogujte se</a></div>
+<div><a href="/AutobuskaStanicaWeb/menu/LoginAdmin.jsp">Ulogujte se kao admin</a></div>
+<div><a href="/AutobuskaStanicaWeb/menu/Register.jsp">Registrujte se</a></div>
 <br>
 
-<p> <span>Zelite da se ulogujete? Kliknite ovde <a href="/AutobuskaStanicaWeb/menu/Login.jsp">Ulogujte se</span>
 <br><br><br>
 </div>
 <br><br>
