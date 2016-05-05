@@ -17,18 +17,18 @@
 				</h1>
             </header>  
 <div  class="form">
-<form id="contactform" method="post" action="../LoginServlet" class="login">
+<form id="contactform" method="post" action="../LoginAdminServlet" class="login">
     <p class="contact">
       <label for="username">Korisnicko ime:</label>
       
     </p>
-    <input id="username" type="text" name="userKorisnika" value="">
+    <input id="username" type="text" name="userAdmin" value="">
 
     <p class="contact">
       <label for="password">Lozinka:</label>
       
     </p>
-    <input id="password" type="password" name="passKorisnika" value="">
+    <input id="password" type="password" name="passAdmin" value="">
 
     <input type="submit" value="Ulogujte se!">
 	<br>
@@ -36,7 +36,8 @@
   </form>
   </div>
   
- <div align="center"><a href="/AutobuskaStanicaWeb/menu/MainPage.jsp"><span><span><span>Menu</span></span></span></a></div>
+<div align="center"><a href="/AutobuskaStanicaWeb/menu/MainPage.jsp"><span><span><span>Menu</span></span></span></a></div>
+  
  
  </div>
 </body>

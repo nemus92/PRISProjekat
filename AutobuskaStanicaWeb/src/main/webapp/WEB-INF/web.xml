@@ -16,6 +16,24 @@
   	<description></description>
   	<servlet-class>projekatServlets.RegistrerServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RezervacijaServlet</servlet-name>
+  	<display-name>RezervacijaServlet</display-name>
+  	<description></description>
+  	<servlet-class>projekatServlets.RezervacijaServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginAdminServlet</servlet-name>
+  	<display-name>LoginAdminServlet</display-name>
+  	<description></description>
+  	<servlet-class>projekatServlets.LoginAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>IzmeniKartuServlet</servlet-name>
+  	<display-name>IzmeniKartuServlet</display-name>
+  	<description></description>
+  	<servlet-class>projekatServlets.IzmeniKartuServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
@@ -23,5 +41,17 @@
   <servlet-mapping>
   	<servlet-name>RegistrerServlet</servlet-name>
   	<url-pattern>/RegistrerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RezervacijaServlet</servlet-name>
+  	<url-pattern>/RezervacijaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginAdminServlet</servlet-name>
+  	<url-pattern>/LoginAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IzmeniKartuServlet</servlet-name>
+  	<url-pattern>/IzmeniKartuServlet</url-pattern>
   </servlet-mapping>
 </web-app>

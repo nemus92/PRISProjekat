@@ -5,54 +5,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-<link rel="stylesheet" type="text/css" href="/AutobuskaStanicaWeb/style.css" media="all" />
-<link rel="stylesheet" type="text/css" href="/AutobuskaStanicaWeb/demo.css" media="all" />
 <title></title>
-</head>
- <body>
-        <form method="post" action="register.jsp">
-            <center>
-            <table border="1" width="30%" cellpadding="5">
-                <thead>
-                    <tr>
-                        <th colspan="2">Registracija</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ime</td>
-                        <td><input type="text" name="imeKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Prezime</td>
-                        <td><input type="text" name="prezimeKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Adresa</td>
-                        <td><input type="text" name="adresaKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>JMBG</td>
-                        <td><input type="text" name="jmbgKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Korisnicko ime</td>
-                        <td><input type="text" name="userKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Lozinka</td>
-                        <td><input type="password" name="passKorisnika" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Potvrdi" /></td>
-                        <td><input type="reset" value="Obrisi" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Vec ste regisrtovani! <a href="Login.jsp">Uloguj se ovde</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </form>
-    </body>
+<body>
+<div class="container">
+
+<br><br><br><br>
+			<header>
+				<h1><span>Autobuska stanica</span>			
+				</h1>
+            </header>  
+            <br><br><br>
+<div  class="form">
+<form id="contactform" method="post" action="../RegisterServlet" class="login">
+
+<div><p class="contact"><label for="username">Ime:</label></p><input type="text" name="imeKorisnika" value=""></div>
+<div><p class="contact"><label for="username">Prezime:</label></p><input type="text" name="prezimeKorisnika" value=""></div>
+<div><p class="contact"><label for="username">Adresa:</label></p><input type="text" name="adresaKorisnika" value=""></div>
+<div><p class="contact"><label for="username">JMBG:</label></p><input type="text" name="jmbgKorisnika" value=""></div>
+<div><p class="contact"><label for="username">Korisnicko ime:</label></p><input type="text" name="userKorisnika" value=""></div>
+<div><p class="contact"><label for="username">Lozinka:</label></p><input type="text" name="passKorisnika" value=""></div>
+<br>
+<input type="submit" value="Registrujte se">
+</form>
+</div>
+<br>
+<div align="center">${msg}</div>
+<br>
+<div align="center"><a href="/AutobuskaStanicaWeb/menu/MainPage.jsp"><span><span><span>Menu</span></span></span></a></div>
+
+<br><br>
+</div>
+</body>
 </html>
