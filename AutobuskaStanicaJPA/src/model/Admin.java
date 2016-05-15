@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -20,6 +21,10 @@ public class Admin implements Serializable {
 	private String passAdmin;
 
 	private String userAdmin;
+
+	//bi-directional many-to-one association to Polazak
+	@OneToMany(mappedBy="admin")
+	private List<Polazak> polazaks;
 
 	public Admin() {
 	}
@@ -46,6 +51,28 @@ public class Admin implements Serializable {
 
 	public void setUserAdmin(String userAdmin) {
 		this.userAdmin = userAdmin;
+	}
+
+	public List<Polazak> getPolazaks() {
+		return this.polazaks;
+	}
+
+	public void setPolazaks(List<Polazak> polazaks) {
+		this.polazaks = polazaks;
+	}
+
+	public Polazak addPolazak(Polazak polazak) {
+		getPolazaks().add(polazak);
+		polazak.setAdmin(this);
+
+		return polazak;
+	}
+
+	public Polazak removePolazak(Polazak polazak) {
+		getPolazaks().remove(polazak);
+		polazak.setAdmin(null);
+
+		return polazak;
 	}
 
 }
