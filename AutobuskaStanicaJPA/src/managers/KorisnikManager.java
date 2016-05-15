@@ -16,7 +16,7 @@ public class KorisnikManager {
 		//em.getTransaction().begin();
 		try {
 			
-		TypedQuery<Korisnik> tq = em.createQuery("SELECT k FROM Korisnik k WHERE k.userKorisnika = :username "
+		TypedQuery<Korisnik> tq = em.createQuery("SELECT k FROM korisnik k WHERE k.userKorisnika = :username "
 				+ "AND k.passKorisnika = :password", Korisnik.class);
 		tq.setParameter("username", username);	
 		tq.setParameter("password", password);
