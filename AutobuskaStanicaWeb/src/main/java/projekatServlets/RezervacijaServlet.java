@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import managers.JPAUtil;
 import managers.RezervacijaManager;
+import model.Karta;
 import model.Korisnik;
 
 /**
@@ -33,14 +34,13 @@ public class RezervacijaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		EntityManager em = JPAUtil.getEntityManager();
-		String idKartaString = request.getParameter("idKarta");
+		Karta ka = (Karta) request.getAttribute("idKarta");
 		Korisnik k = (Korisnik) request.getSession().getAttribute("korisnik");
 		
 		String msg = "";
 		
-		int idKarta = Integer.parseInt(idKartaString);
 		
-		int idRezervacije = new RezervacijaManager().rezervisiKartu(em, idKarta, k.getIdKorisnik());    
+		int idRezervacije = new RezervacijaManager().rezervisiKartu(em, ka.getIdKarta(), k.getIdKorisnik());    
 		
 		if (idRezervacije > 0) {
 			
