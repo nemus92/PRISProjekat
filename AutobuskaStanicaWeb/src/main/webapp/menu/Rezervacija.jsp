@@ -27,11 +27,12 @@
 </tr>
 <c:forEach items="${karte.slobodneKarte}" var="kr">
 		<tr>
-		<td><div>${kr.cenaKarte}&nbsp;</div></td>
+		
 		<td><div>${kr.vrstaKarte}&nbsp;</div></td>
+		<td><div>${kr.cenaKarte}&nbsp;</div></td>
 		
 		<tr>
-		<td><div><a href="/AutobuskaStanicaWeb/RezervacijaServlet?idKarta=${k.idKarta}">Rezervisi</a></div></td>
+		<td><div><a href="/AutobuskaStanicaWeb/RezervacijaServlet?idKarta=${kr.idKarta}">Rezervisi</a></div></td>
 		</tr> <tr></tr>
 </c:forEach>
 

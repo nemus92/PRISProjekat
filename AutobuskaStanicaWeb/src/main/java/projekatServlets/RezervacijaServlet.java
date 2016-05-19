@@ -34,7 +34,17 @@ public class RezervacijaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		EntityManager em = JPAUtil.getEntityManager();
-		Karta ka = (Karta) request.getAttribute("idKarta");
+		/*
+		 * id karta je int, treba da bude objekat
+		 * 
+		 */
+		
+		System.out.println(request.getAttribute("idKarta")); //                  OVDE DOBIJEMO DA JE idKarta null PA ZBOG TOGA NE MOZEMO DA REZERVISEMO KARTU
+		
+		Karta ka = em.find(Karta.class, 2);					//					 KADA GA NATERAM RUCNO DA PRONADJE KARTU ONDA JE I REZERVISE
+		
+		if(request.getSession().getAttribute("korisnik")==null)
+			System.out.println("NEma korisnika!!");
 		Korisnik k = (Korisnik) request.getSession().getAttribute("korisnik");
 		
 		String msg = "";

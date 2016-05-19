@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<jsp:useBean id="karte" class="projekatBeans.CenaKarteBean" scope="page"></jsp:useBean>
+<jsp:useBean id="karte" class="projekatBeans.SlobodneKarteBean" scope="page"></jsp:useBean>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" type="text/css" href="/ProjekatNemanjaWeb/style.css" media="all" />
@@ -26,9 +26,9 @@
 <tr>
 		<td><label>Cena:</label></td>
 </tr>
-<c:forEach items="${karte.cenaKarte}" var="ka">
+<c:forEach items="${karte.slobodneKarte}" var="ka">
 		<tr>
-		<td><div>${ka.cenaKarte}&nbsp;</div></td>
+		<td><div>${ka.slobodneKarte}&nbsp;</div></td>
 		<tr>
 		<td><div><a href="/AutobuskaStanicaWeb/IzmeniKartuServlet?idKarta=${ka.idKarta}">Izmeni</a></div></td>
 		</tr> <tr></tr>

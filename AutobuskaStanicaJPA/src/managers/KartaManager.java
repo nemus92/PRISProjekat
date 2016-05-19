@@ -61,7 +61,7 @@ public class KartaManager {
 	
 public static void main(String[] args) {
 		EntityManager em = JPAUtil.getEntityManager();
-	Integer k = new KartaManager().dodajKartu(em, "redovna", "1000");
+	Integer k = new KartaManager().dodajKartu(em, "1500", "putnicka");
 	}
 }
 

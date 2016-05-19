@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		if (korisnik != null) {
 			msg = "Ulogovali ste se kao :" + korisnik.getImeKorisnika() + " " + korisnik.getPrezimeKorisnika() + 
 					" <a href=" + "/AutobuskaStanicaWeb/LogoutServlet" + ">Logout.</a>";
-		
+			System.out.println("Korisnik je nadjen");
 		request.setAttribute("msg", msg);
 		request.getSession().setAttribute("korisnik", korisnik);
 			
@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet {
 		rd.forward(request, response);
 
 		} else {
+			System.out.println("Korinsik je null");
 			msg = "Pogresan username i password! Pokusajte ponovo.";
 			request.setAttribute("msg", msg);
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu/Login.jsp");
